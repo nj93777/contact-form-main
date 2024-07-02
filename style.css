@@ -1,0 +1,268 @@
+@font-face {
+  font-family: "MyCustomFont";
+  src: url("./assets/fonts/Karla-VariableFont_wght.ttf") format("truetype");
+}
+
+body {
+  width: 100%;
+  font-family: "MyCustomFont", Arial, sans-serif;
+  font-size: 16px;
+  background-color: #e0f0e9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+
+}
+
+.container {
+  position: relative;
+  width: 90%;
+  max-width: 500px;
+}
+
+.contact-form {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+ 
+}
+
+.contact-form h2 {
+  text-align: left;
+  margin-bottom: 16px;
+  font-size: 24px;
+  color: #032820;
+}
+
+.contact-form .form-group {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.contact-form input[type="text"]:hover,
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:hover,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:hover,
+.contact-form textarea:focus {
+  border: 1px solid green;
+  outline: none;
+}
+
+.contact-form textarea {
+  height: 100px;
+  resize: none;
+  border: 1px solid lightgray;
+}
+
+.contact-form .name-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.contact-form .radio-group {
+  display: flex;
+  gap: 20px;
+}
+
+.contact-form .radio-group label {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 50%;
+  padding: 10px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  height: 10px;
+}
+
+.radio-group input[type="radio"] {
+  accent-color: green;
+}
+
+.contact-form .radio-group label:hover {
+  border: 1px solid green;
+}
+
+.contact-form .radio-group label p {
+  margin-right: 50px;
+}
+
+.radio-group label {
+  background-color: white;
+}
+
+.radio-group label.selected {
+  background-color: #e0f0e9;
+}
+
+.contact-form .checkbox-group {
+  display: flex;
+  align-items: center;
+}
+
+.contact-form .checkbox-group input {
+  margin-right: 10px;
+}
+
+#error {
+  position: relative;
+  top: -15px;
+}
+
+.error-message {
+  color: red;
+}
+
+.checkbox-group input[type="checkbox"] {
+  display: none;
+}
+
+.checkbox-group label {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+}
+
+.checkbox-group label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  border: 2px solid lightgray;
+}
+
+.checkbox-group input[type="checkbox"]:checked + label::before {
+  content: url("./assets/images/icon-checkbox-check.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007b5e;
+  color: white;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: #005a46;
+}
+
+.hidden {
+  display: none;
+}
+
+#messageBox {
+  padding: 10px;
+  background-color: rgb(13, 71, 13);
+  border-radius: 5%;
+  width: 35%;
+  height: auto;
+  color: white;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: -13%; /* Adjust to ensure it's above the form */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#messageBox p {
+  text-align: left;
+}
+
+.message-container {
+  display: flex;
+  align-items: center;
+}
+
+.line {
+  display: block;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  
+  }
+}
+
+@media (max-width: 600px) {
+
+body {
+  font-size: 16px;
+}
+
+  .contact-form .name-group,
+  .contact-form .radio-group {
+    flex-direction: column;
+  }
+
+  .radio-group {
+    display: flex;
+  }
+
+  .contact-form .radio-group {
+    width: 100%;
+  }
+
+  .contact-form .radio-group label {
+    width: 90%;
+  }
+
+  .radio-group label p {
+    margin: 0;
+    padding: 0;
+  }
+
+  .radio-group input[type="radio"] {
+    margin: 0;
+  }
+
+  #messageBox {
+    padding: 10px;
+    background-color: rgb(13, 71, 13);
+    border-radius: 5%;
+    width: 50%;
+    height: auto;
+    color: white;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: -10%; 
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+
+}
