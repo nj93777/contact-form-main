@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const form = document.querySelector('.contact-form');
     const box = document.getElementById('Box');
 
-    // Piilotetaan Box elementti alussa
+
    messageBox.style.display = 'none';
 
     form.addEventListener('submit', function(event) {
@@ -112,10 +112,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     radioButtons.forEach(radio => {
         radio.addEventListener('change', function () {
-            // Poistetaan 'selected'-luokka kaikilta labeleilta
+            
             radioButtons.forEach(rb => rb.parentElement.classList.remove('selected'));
 
-            // Lisätään 'selected'-luokka nykyiselle labelille
+           
             if (radio.checked) {
                 radio.parentElement.classList.add('selected');
             }
