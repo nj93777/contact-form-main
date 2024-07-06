@@ -1,9 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.querySelector('.contact-form');
-    const box = document.getElementById('Box');
+    const messageBox = document.getElementById('messageBox');
 
-
-   messageBox.style.display = 'none';
+    messageBox.style.display = 'none';
 
     form.addEventListener('submit', function(event) {
         event.preventDefault();
@@ -63,10 +62,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         if (isValid) {
-
+            
             messageBox.classList.remove('hidden');
             messageBox.style.display = 'block';
 
+            setTimeout(function() {
+                messageBox.style.display = 'none';
+            }, 5000);
         
             form.reset();
         }
@@ -85,6 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
             } else {
                 element.parentNode.insertBefore(errorElement, element.nextSibling);
             }
+            element.style.border = '2px solid #FFCCCC';
         }
         errorElement.textContent = message;
         element.classList.add('error');
@@ -101,6 +104,9 @@ document.addEventListener('DOMContentLoaded', function() {
             errorElement.textContent = '';
         }
         element.classList.remove('error');
+        if (element.type !== 'radio') {
+            element.style.border = '';
+        }
     }
 
     function isValidEmail(email) {
@@ -112,10 +118,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     radioButtons.forEach(radio => {
         radio.addEventListener('change', function () {
-            
             radioButtons.forEach(rb => rb.parentElement.classList.remove('selected'));
-
-           
             if (radio.checked) {
                 radio.parentElement.classList.add('selected');
             }
