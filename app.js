@@ -63,11 +63,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         if (isValid) {
-            // Näytetään viestilaatikko
+
             messageBox.classList.remove('hidden');
             messageBox.style.display = 'block';
 
-            // Tyhjennetään lomakkeen kentät
+        
             form.reset();
         }
     });
